@@ -1,7 +1,7 @@
 import yaml
 
 def loading():
-    with open("sets.yaml",encoding="utf-8") as fs:
+    with open("../Conf/sets.yaml", encoding="utf-8") as fs:
         datas = yaml.load(fs,yaml.FullLoader)
     return datas
 

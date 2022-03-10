@@ -1,6 +1,6 @@
 import requests
-import settings
-from settings.setting import loading
+import Conf
+from Common.setting import loading
 
 
 def __handle_header(token=None):

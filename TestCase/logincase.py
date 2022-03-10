@@ -1,4 +1,4 @@
-from settings.handle_requests import *
+from Common.handle_requests import *
 
 def loding_case():
     datas = loading()
