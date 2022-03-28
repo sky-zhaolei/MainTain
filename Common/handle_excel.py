@@ -6,6 +6,7 @@ excel类的需求是什么
 初始化工作    加载excel文件，打开一个表单
 """
 from openpyxl import load_workbook
+import json
 
 
 class HandleExcel:
@@ -30,8 +31,8 @@ class HandleExcel:
             for index in item:
                 value_dict.append(index.value)  # 将读取到的每一行值添加入value_dict列表
             res = dict(zip(titles, value_dict))  # 将titles和读取出的每行数据，均打包成字典,使用dict方法转换成字典
-            res["check"] = eval(res["check"])  # 在追加到列表中时，将check行转换为字符对象
-
+            #res["check"] = eval(res["check"])  # 在追加到列表中时，将check行转换为字符对象
+            res["request_data"] = json.loads(res["request_data"])#将请求数据从json字符串转换成字典
             all_datas.append(res)  # 将每一行字段均追加到data_lists列表中
         return all_datas
 

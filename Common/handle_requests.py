@@ -32,6 +32,6 @@ if __name__ == '__main__':
 
     loging_url = "http://store.test.dstcar.com/dst-partner-apis/api-store/public/login"
     datas = {"phone":"15070720246","verifyCode":"999999"}
-    resp = send_requests("POST",loging_url,datas)
+    resp = send_requests("POST", loging_url, datas)
     toekn = resp.json()["data"]["token"]
     print(toekn)
