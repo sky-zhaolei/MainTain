@@ -1,0 +1,14 @@
+Common:公共使用模块
+
+
+conf：配置文件
+
+
+Outputs：输出报告、输出日志等文件
+    logs：日志
+    reports：报告
+
+TestCase：测试用例集
+
+
+TestDatas：测试数据

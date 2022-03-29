@@ -1,16 +1,12 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and Conf.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import unittest
+import os
+from BeautifulReport import BeautifulReport
+from Common.handle_path import cases_dir,reports_dir
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+#收集用例
+s = unittest.TestLoader.discover(cases_dir)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#生成测试报告
+br = BeautifulReport(s)
+br.report("maintain造数据自动化",reports_dir + "\\report.html")

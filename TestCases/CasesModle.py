@@ -2,7 +2,7 @@ import unittest
 from Common.handle_requests import send_requests
 
 """
-定义测试类，继承unittest.TestCase
+定义测试类，继承unittest.TestCases
 在测试类中，以test_开头，定义测试函数
 每一个test_开头的函数，就是一个测试用例
 编写用例：
