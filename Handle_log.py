@@ -20,11 +20,15 @@ logger.setLevel(logging.INFO)
 
 #3、设置日志输出渠道
 handle1 = logging.StreamHandler()
+#设置渠道自己的输出级别
+handle1.setLevel(logging.ERROR)
 # handle2 = logging.FileHandler()
+
 
 #4、设置渠道输出格式
 fmt = '%(asctime)s-第%(lineno)d行-%(name)s-%(filename)s-%(levelname)s-%(message)s'
 formatter = logging.Formatter(fmt)
+
 
 #5、将日志格式绑定到渠道中
 handle1.setFormatter(formatter)
@@ -33,4 +37,7 @@ handle1.setFormatter(formatter)
 #6、将设置好的渠道添加到日志收集器中
 logger.addHandler(handle1)
 
-logger.error("第一个")
+
+
+logger.info("第一个einfo")
+logger.error("第一个error")
