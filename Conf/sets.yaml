@@ -1,3 +1,9 @@
 maintain:
   login_phone: 15070720246
   url: http://store.test.dstcar.com/dst-partner-apis/api-store
+
+mysql:
+  host: 172.16.8.39
+  port: 13306
+  user: dsttest
+  password: EWmFP3ec5msbxK0Q

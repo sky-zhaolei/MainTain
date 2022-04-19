@@ -1,6 +1,6 @@
 import unittest
 from Common.handle_requests import send_requests
-
+from Common.handle_path import reports_dir  #导入日志输出文件路径
 """
 定义测试类，继承unittest.TestCases
 在测试类中，以test_开头，定义测试函数
@@ -11,6 +11,9 @@ from Common.handle_requests import send_requests
     3、预期结果与实际结果的比对（断言）
 
 """
+
+
+
 
 class TestLogin(unittest.TestCase):
 
