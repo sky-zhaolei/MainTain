@@ -12,9 +12,6 @@ from Common.handle_path import reports_dir  #导入日志输出文件路径
 
 """
 
-
-
-
 class TestLogin(unittest.TestCase):
 
     def test_get_vincode(self):    #获取验证码

@@ -1,5 +1,6 @@
 import requests
-from Common.setting import loading
+import json
+import jsonpath
 
 
 def __handle_header(token=None):
@@ -22,15 +23,27 @@ def send_requests(method,url,data=None,token=None):
         resp = requests.post(url,json=data,headers=headers)
     return resp
 
-if __name__ == '__main__':
-    datas = loading()
-    userphone = datas["maintain"]["login_phone"]
+def login_case():
+    login_phone = input()
     url = "http://store.test.dstcar.com/dst-partner-apis/api-store/public/verifyCode"
-    datas = {"phone":"15070720246"}
-    resp = send_requests("POST",url,datas)
+    datas = {"phone": login_phone}
+    send_requests("POST", url, datas)
 
     loging_url = "http://store.test.dstcar.com/dst-partner-apis/api-store/public/login"
-    datas = {"phone":"15070720246","verifyCode":"999999"}
+    datas = {"phone": login_phone, "verifyCode": "999999"}
     resp = send_requests("POST", loging_url, datas)
-    toekn = resp.json()["data"]["token"]
-    print(toekn)
+    token = resp.json()["data"]["token"]
+    print("------获取token成功------当前token为：",token)
+
+    get_now_url = "http://store.test.dstcar.com/dst-partner-apis/api-store/store/user/getUserInfo"
+    datas = {}
+    resp = send_requests("POST", get_now_url, datas, token)
+    now_store_name = resp.json()
+    print(now_store_name,"$.data.current_store_info.store_name")
+
+if __name__ == '__main__':
+    print("---------请输入你所登录的账号----------")
+    login_case()
+
+
+
